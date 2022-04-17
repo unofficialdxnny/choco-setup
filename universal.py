@@ -1,18 +1,12 @@
 ## Bored so wrote this script to automatically setup my pc for fresh windows installs
 
-## Bored so wrote this script to automatically setup my pc for fresh windows installs
-
 import os
 import platform
 from playsound import playsound
 import keyboard as kb
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
-import requests
-
 import time 
+import admin
+import ctypes, sys
 
 windows = '''
 
@@ -51,21 +45,45 @@ windows = '''
 
 
 '''
-platform = platform.system()
 
-print(platform)
-os.system('cls')
+
+
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+if is_admin():
+    platform = platform.system()
+
+    print(platform)
+    os.system('cls')
 
 if platform == 'Windows':
-    print(f'{windows}')
+  print(windows)
+  print(f'OS Detected is {platform}')
+  check = input('Is this correct? (y/n): ')
+  if check == 'y':
+    time.sleep(2)
     playsound('windows.mp3')
     print('')
-    requests.get('https://code.visualstudio.com/docs/?dv=win')
+    print('Installing FireFox...')
+    os.system('choco install firefox -y --force')
+    print('FireFox Installed!')
+    time.sleep(5)
+
+
+  elif check != 'y':
+    playsound('Error.mp3')
+    kb.press('alt+F4')
+    
+    
     
 
 
+# elif platform == 'Linux':
+    
+else:
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
 
 
-
-elif platform == 'Linux':
-    print('False')
