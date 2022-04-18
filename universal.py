@@ -5,9 +5,8 @@ import platform
 from playsound import playsound
 import keyboard as kb
 import time 
-import admin
 import ctypes, sys
-import winapps
+
 
 
 
@@ -49,10 +48,8 @@ windows = '''
 
 '''
 
-for item in winapps.search_installed('chrome'):
-    print(item)
 
-time.sleep(69)
+
 def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
@@ -69,39 +66,49 @@ if platform == 'Windows':
   print(f'OS Detected is {platform}')
   check = input('Is this correct? (y/n): ')
   if check == 'y':
-    amount = 10
+    amount = 13
     print(f'Going to Install {amount} Applications')
     time.sleep(2)
     playsound('windows.mp3')
     print('')
     os.system("Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))")
+    amount -= 1
     print('Installing FireFox...')
     os.system('choco install firefox -y --force')
     print('FireFox Installed!')
+    amount -= 1
     print('Installing CCleaner...')
     os.system('choco install ccleaner -y --force')
     print('Ccleaner Installed...')
+    amount -= 1
     print('Installing Git...')
     os.system('choco install git -y --force')
     print('Git Installed!')
+    amount -= 1
     print('Installing Speccy...')
     os.system('choco install speccy -y --force')
     print('Speccy Installed!')
+    amount -= 1
     print('Installing Scrcpy')
     os.system('choco install scrcpy -y --force')
     print('Scrcpy Installed!')
+    amount -= 1
     print('Installing Discord...')
     os.system('choco install discord -y --force')
     print('Discord Installed!')
+    amount -= 1
     print('Installing VLC...')
     os.system('choco install vlc -y --force')
     print('VLC Installed!')
+    amount -= 1
     print('Installing Audacity...')
     os.system('choco install audacity -y --force')
     print('Audacity Installed!')
+    amount -= 1
     print('Installing OBS...')
     os.system('choco install obs-studio -y --force')
     print('OBS Installed!')
+    amount -= 1
     print('Installing Winrar...')
     os.system('choco install winrar -y --force')
     print('Installed Winrar!')
