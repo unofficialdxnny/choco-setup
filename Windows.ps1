@@ -2,36 +2,23 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 
 
 # Essentials
-choco install veracrypt -y
-choco install keepassxc -y
 choco install chromium -y
 choco install firefox -y
-choco install foxitreader -y
-choco install malwarebytes -y
 choco install ccleaner -y
-choco install f.lux -y
-choco install sudo -y
-choco install scrcpy -y
-choco install money-manager-ex -y
 choco install speccy -y
-choco install signal -y
+
 
 # Comms
 choco install skype -y
 choco install telegram.install -y
 choco install whatsapp -y
 
+
 # Media
 choco install vlc -y
 choco install audacity -y
-choco install deezer -y
-choco install openshot -y
 choco install obs-studio -y
 choco install zoomit -y
-
-# Design
-choco install gimp -y
-choco install inkscape -y
 
 # Additional Tools
 choco install 7zip -y
