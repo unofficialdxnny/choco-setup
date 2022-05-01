@@ -32,3 +32,4 @@ choco install teamviewer -y --force
 choco install vscode -y --force
 choco install autoruns -y --force
 choco install nodejs -y --force 
+choco install geforce-experience -y --force
