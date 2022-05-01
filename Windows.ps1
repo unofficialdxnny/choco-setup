@@ -33,3 +33,6 @@ choco install vscode -y --force
 choco install autoruns -y --force
 choco install nodejs -y --force 
 choco install geforce-experience -y --force
+choco install discord -y --force
+choco install taskbarx -y --force
+choco install translucenttb -y --force
